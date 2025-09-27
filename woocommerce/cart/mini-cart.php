@@ -60,7 +60,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 								<?php echo $thumbnail ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</a>
 						<?php endif; ?>
-						<div class="flex flex-col items-start dark:text-textPrimary-100 mx-2">
+						<div class="flex flex-col items-start dark:text-text-primary-100 mx-2">
 							<a href="<?php echo $product_permalink ?>" class="block text-right text-sm">
 								<?php echo $product_name ?>
 							</a>
@@ -79,7 +79,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 	<div>
 
-		<p class="woocommerce-mini-cart__total total flex justify-between dark:text-textPrimary-100">
+		<p class="woocommerce-mini-cart__total total flex justify-between dark:text-text-primary-100">
 			<?php
 			/**
 			 * Hook: woocommerce_widget_shopping_cart_total.

@@ -11,7 +11,7 @@
                 <div
                     class='flex flex-col justify-center items-start bg-white-100 p-5 rounded-md shadow-my mb-2 dark:bg-dark-50 dark:shadow-none'>
                     <h1
-                        class='w-full text-2xl text-slate-700 md:text-4xl font-extrabold text-right mt-1 mb-3 dark:text-textPrimary-100'>
+                        class='w-full text-2xl text-slate-700 md:text-4xl font-extrabold text-right mt-1 mb-3 dark:text-text-primary-100'>
                         <?php the_title(); ?>
                     </h1>
                     <?php 
@@ -117,7 +117,7 @@
                         <div class="w-full flex justify-center items-center mt-2">
                             <img class="rounded-full" width="64" heigh="64"
                                 src="<?php echo get_post_meta( get_the_ID() , 'pic_manager_salon' , true); ?>" />
-                            <span class='text-base font-medium text-gray-600 dark:text-textPrimary-100 mr-2'>
+                            <span class='text-base font-medium text-gray-600 dark:text-text-primary-100 mr-2'>
                                 <?php echo  get_post_meta( get_the_ID() , 'name_manager_salon' , true); ?>
                             </span>
                         </div>
@@ -135,7 +135,7 @@
                             </span>
                         </div>
                         <div class="w-full flex justify-center items-center nt-2">
-                            <span class='text-base font-medium text-gray-600 dark:text-textPrimary-100 mr-2'>
+                            <span class='text-base font-medium text-gray-600 dark:text-text-primary-100 mr-2'>
                                 <?php echo  get_post_meta( get_the_ID() , 'address_salon' , true); ?>
                             </span>
                         </div>
@@ -153,7 +153,7 @@
                             </span>
                         </div>
                         <div class="w-full flex justify-center items-center mt-2">
-                            <span class='text-base font-medium text-gray-600 dark:text-textPrimary-100 mr-2'>
+                            <span class='text-base font-medium text-gray-600 dark:text-text-primary-100 mr-2'>
                                 <?php echo  get_post_meta( get_the_ID() , 'phone_salon' , true); ?>
                             </span>
                         </div>

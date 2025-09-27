@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<div class="cart-container bg-white-100 text-textPrimary-100 p-5 rounded-md">
+<div class="cart-container bg-white-100 text-text-primary-100 p-5 rounded-md">
 	<div class="w-full lg:w-9/12 ml-3">
 		<form class="woocommerce-cart-form card" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 			<?php do_action( 'woocommerce_before_cart_table' ); ?>

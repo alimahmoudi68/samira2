@@ -4,7 +4,7 @@ global $my_opt;
 ?>
 
 <div class='flex justify-between mb-4 md:mb-6'>
-    <div class='text-lg flex items-center font-semibold py-2 text-textPrimary-100'>
+    <div class='text-lg flex items-center font-semibold py-2 text-text-primary-100'>
         <div class='w-[20px] h-[20px] rounded-md bg-primary-100 ml-2'></div>
         <span class="text-xl md:text-3xl font-bold">چرا ما؟</span>
     </div>
@@ -14,11 +14,11 @@ global $my_opt;
 <div class="flex flex-col gap-y-8 lg:flex-row justify-between lg:items-center flex-wrap mb-[50px] md:mb-[80px]">
     <div class='w-full h-fit flex flex-wrap gap-x-[16px] gap-y-3 justify-start items-center lg:w-[48%] order-2 lg:order-1'>
         <span
-            class='text-base font-semibold text-center md:text-xl text-textPrimary-100 mb-2'>
+            class='text-base font-semibold text-center md:text-xl text-text-primary-100 mb-2'>
             <span class='mx-1'><?php echo get_bloginfo('name'); ?></span> جایی که هنر و مهارت به هم می‌رسند.    
         </span>
         <span
-            class='font-normal text-start md:font-normal text-textPrimary-100 mb-6'>
+            class='font-normal text-start md:font-normal text-text-primary-100 mb-6'>
             در آکادمی ما، فقط آموزش نمی‌بینید؛ بلکه به یک حرفه‌ای واقعی تبدیل می‌شوید! تدریس توسط برترین اساتید، سرفصل‌های به‌روز، پشتیبانی دائمی و ارائه مدرک معتبر، تنها بخشی از مزایای یادگیری با ماست. آماده‌اید تا به یک هنرمند حرفه‌ای در دنیای زیبایی تبدیل شوید؟
         </span>
     </div>

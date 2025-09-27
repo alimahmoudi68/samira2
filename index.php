@@ -12,13 +12,13 @@ get_header();
         <?php get_template_part('template/index' , 'faq') ?>
     </div>
 </main>
-<div class='portfolio-detail-container hidden bg-black-70 fixed top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center z-[999999999]'>
+<div class='portfolio-detail-container hidden bg-black-70 fixed top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center z-999999999'>
     <div class="relative w-full max-w-[80%] md:max-w-[50%] rounded-lg overflow-hidden bg-black">
 
         <img src="" class="mx-auto my-auto object-contain">
 
         <!-- استفاده از نسبت تصویر 9 به 16 -->
-        <div class="portfolio-detail-video-container relative aspect-[16/9] w-full rounded-lg flex items-center justify-center overflow-hidden">
+        <div class="portfolio-detail-video-container relative aspect-video w-full rounded-lg flex items-center justify-center overflow-hidden">
 
             <video controls class="portfolio-detail-video absolute top-0 left-0 w-full h-full object-contain rounded-lg bg-black-100">
                 <source type="video/mp4">

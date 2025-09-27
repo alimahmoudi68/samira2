@@ -11,7 +11,7 @@ if($reviews->have_posts()){
 ?>
 
 <div class='flex justify-between mb-2 md:mb-6'>
-    <div class='text-lg flex items-center font-semibold py-2 text-textPrimary-100'>
+    <div class='text-lg flex items-center font-semibold py-2 text-text-primary-100'>
         <div class='hidden md:block md:w-[20px] md:h-[20px] rounded-md bg-primary-100 ml-2'></div>
         <span class="text-xl md:text-3xl font-bold">نظرات هنرجویان</span>
     </div>
@@ -45,10 +45,10 @@ if($reviews->have_posts()){
 <?php } ?>
 
 
-<div class='video-review-container hidden bg-black-70 fixed top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center z-[999999999]'>
+<div class='video-review-container hidden bg-black-70 fixed top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center z-999999999'>
     <div class="relative w-full max-w-[80%] md:max-w-[50%] rounded-lg overflow-hidden bg-black">
         <!-- استفاده از نسبت تصویر 9 به 16 -->
-        <div class="relative aspect-[16/9] w-full rounded-lg overflow-hidden">
+        <div class="relative aspect-video w-full rounded-lg overflow-hidden">
             <video controls class="video-review absolute top-0 left-0 w-full h-full object-contain rounded-lg bg-black-100">
                 <source type="video/mp4">
                 مرورگر شما از ویدیو پشتیبانی نمی‌کند.

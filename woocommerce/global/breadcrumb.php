@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! empty( $breadcrumb ) ) { ?>
 
-	<div class='w-full overflow-x-auto overflow-y-hidden text-textPrimary-100 bg-white-100 px-5 py-2 md:py-4 rounded-lg flex gap-x-2 items-center mt-2 mb-3'>
+	<div class='w-full overflow-x-auto overflow-y-hidden text-text-primary-100 bg-white-100 px-5 py-2 md:py-4 rounded-lg flex gap-x-2 items-center mt-2 mb-3'>
 
 	<?php
 	foreach ( $breadcrumb as $key => $crumb ) {
@@ -30,9 +30,9 @@ if ( ! empty( $breadcrumb ) ) { ?>
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
 			echo '<div class="relative px-[20px]">
-				<div class="w-[50px] h-[3px] rounded-lg bg-gray-300 absolute bottom-[-7px] left-[-18px] rotate-[45deg]"></div>
+				<div class="w-[50px] h-[3px] rounded-lg bg-gray-300 absolute bottom-[-7px] left-[-18px] rotate-45"></div>
 					<a class="min-w-fit text-[0.8rem]" href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>
-				<div class="w-[50px] h-[3px] rounded-lg bg-gray-300 absolute top-[-7px] left-[-18px] rotate-[-45deg]"></div>
+				<div class="w-[50px] h-[3px] rounded-lg bg-gray-300 absolute top-[-7px] left-[-18px] -rotate-45"></div>
 			</div>';
 		} else {
 			echo '<div class="relative px-[20px]">

@@ -1,11 +1,11 @@
-<div class="card-product flex flex-col items-center h-fit transition-all bg-white-100 duration-300 rounded-md border-none dark:bg-darkCard-100 relative">
+<div class="card-product flex flex-col items-center h-fit transition-all bg-white-100 duration-300 rounded-md border-none dark:bg-dark-card-100 relative">
     <div class="w-full overflow-hidden card-image-container rounded-md">
         <a href="<?php the_permalink() ?>">
         <?php the_post_thumbnail('post'); ?>
         </a>
     </div>
     <div class="flex flex-col w-full mt-2 p-3">
-        <div class="w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-slate-500 dark:text-textPrimary-100">
+        <div class="w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-slate-500 dark:text-text-primary-100">
             <h5>
                 <a href="<?php the_permalink() ?>">
                     <?php the_title(); ?>
@@ -34,7 +34,7 @@
             ?>
             <div class="flex items-center teacher-sec">
                 <?php the_post_thumbnail('profile'); ?>
-                <span class="text-sm font-light text-gray-500 dark:text-textPrimary-100">
+                <span class="text-sm font-light text-gray-500 dark:text-text-primary-100">
                     <?php the_title(); ?>
                 </span>
             </div>
@@ -59,7 +59,7 @@
                     }
                 ?>
             </div>
-            <div class="bg-pink-100 dark:bg-sky-900 dark:text-textPrimary-100 px-2 py-1 rounded-md flex items-center text-xs">
+            <div class="bg-pink-100 dark:bg-sky-900 dark:text-text-primary-100 px-2 py-1 rounded-md flex items-center text-xs">
                 <svg class="m w-4 h-4 ml-1" viewBox="0 0 15 14" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

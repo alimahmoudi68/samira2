@@ -46,13 +46,13 @@ $faqs = array(
                         <div
                             class='rounded-lg py-1 px-3 ml-2 bg-primary-100'>
                             <span
-                                class='text-lg sm:text-2xl font-bold text-textPrimary-100'>?</span>
+                                class='text-lg sm:text-2xl font-bold text-text-primary-100'>?</span>
                         </div>
                         <span
-                            class='text-sm sm:text-base text-textPrimary-100'><?php echo $faq->q; ?></span>
+                            class='text-sm sm:text-base text-text-primary-100'><?php echo $faq->q; ?></span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4 sm:h-6 sm:w-6 stroke-gray-600 stroke-textPrimary-100"
+                        class="h-4 w-4 sm:h-6 sm:w-6 stroke-gray-600 stroke-text-primary-100"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
@@ -61,7 +61,7 @@ $faqs = array(
             <div class='answer-container w-full transition-all duration-200 rounded-md max-h-0 overflow-hidden'>
                 <div class='mt-3 mr-14 p-3 rounded-md'>
                     <span
-                        class='text-sm sm:text-base font-normal text-textPrimary-100'><?php echo $faq->a; ?></span>
+                        class='text-sm sm:text-base font-normal text-text-primary-100'><?php echo $faq->a; ?></span>
                 </div>
             </div>
             </div>    

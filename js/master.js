@@ -18,17 +18,9 @@ function toPersian(number){
 
 
 // --------- show/hide master sidebar -----------------
-let btnHamberger = document.querySelector('.btn-hamberger');
 let mstSidebar = document.querySelector(".mst-sidebar");
 let mstSidebarBg = document.querySelector(".mst-sidebar-bg");
 
-btnHamberger.addEventListener('click' , function(){
-  mstSidebarBg.style.display = "block";
-  setTimeout(()=>{
-    mstSidebar.classList.remove('translate-x-full');
-    mstSidebar.classList.add('translate-x-0');
-  } , 10);
-})
 
 // --------- show/hide cart sidebar -----------------
 let btnCart = document.querySelector('.btn-cart');
@@ -39,7 +31,7 @@ btnCart.addEventListener('click' , function(){
   mstCartBg.style.display = "block";
   setTimeout(()=>{
     mstCart.classList.add('translate-x-0');
-    mstCart.classList.remove('translate-x-[-100%]');
+    mstCart.classList.remove('-translate-x-full');
   } , 100);
 })
 
@@ -59,7 +51,7 @@ window.onclick = function(e) {
 
   if (e.target == mstCartBg) {
     mstCart.classList.remove('translate-x-0');
-    mstCart.classList.add('translate-x-[-100%]');
+    mstCart.classList.add('-translate-x-full');
 
     setTimeout(()=>{
       mstCartBg.style.display = "none";
@@ -67,30 +59,9 @@ window.onclick = function(e) {
 
   }
 
-  // if (e.target == mstSidebarBgSort) {
-  //     mstSidebarSort.classList.add('translate-y-full');
-  
-  //     setTimeout(()=>{
-  //       mstSidebarBgSort.style.display = "none";
-  //     } , 200);
-      
-  // }
-
   
 }
-let mstSidebatCatTxt =  document.querySelector('.mst-sidebat-cat-txt');
-let mstSidebatCat =  document.querySelector('.mst-sidebat-cat');
-let mstSidebarSvg = mstSidebatCatTxt.querySelector('svg');
- 
-mstSidebatCatTxt.addEventListener('click' , function(){
-  if (mstSidebatCat.style.maxHeight){
-    mstSidebatCat.style.maxHeight = null;
-    mstSidebarSvg.innerHTML= '<path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />';
-  } else {
-    mstSidebatCat.style.maxHeight = mstSidebatCat.scrollHeight + "px";
-    mstSidebarSvg.innerHTML= '<path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />';
-  } 
-});
+
 // ------- profile menu and shopping cart -------
 let header= document.querySelector('.header');
 let btnProfileMenu = header.querySelector('.profile-header-container');
@@ -159,3 +130,120 @@ var marker = new nmp_mapboxgl.Marker({ color: "purple" })
 
 // نمایش Popup به صورت پیش‌فرض (اختیاری)
 popup.addTo(neshanMap);
+
+// --------- WordPress 3-Level Mega Menu Functionality ---------
+document.addEventListener('DOMContentLoaded', function() {
+    let megaMenu = document.querySelector('.mega-menu');
+    let megaMenuBg = document.querySelector('.mega-menu-bg');
+    let megaCategoryItems = document.querySelectorAll('.mega-category-item');
+    let megaSubcategoryContents = document.querySelectorAll('.mega-subcategory-content');
+    let megaMenuGroup = document.querySelector('.group');
+
+    // Show mega menu on hover
+    if (megaMenuGroup && megaMenu) {
+        megaMenuGroup.addEventListener('mouseenter', function() {
+            megaMenu.classList.remove('hidden');
+            megaMenu.classList.add('show');
+            if (megaMenuBg) {
+                megaMenuBg.classList.remove('hidden');
+            }
+        });
+
+        megaMenuGroup.addEventListener('mouseleave', function() {
+            megaMenu.classList.add('hidden');
+            megaMenu.classList.remove('show');
+            if (megaMenuBg) {
+                megaMenuBg.classList.add('hidden');
+            }
+            
+            // Reset active states
+            megaCategoryItems.forEach(item => item.classList.remove('active'));
+            megaSubcategoryContents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('show');
+            });
+        });
+
+        // Also handle hover on the mega menu itself
+        if (megaMenu) {
+            megaMenu.addEventListener('mouseenter', function() {
+                megaMenu.classList.remove('hidden');
+                megaMenu.classList.add('show');
+                if (megaMenuBg) {
+                    megaMenuBg.classList.remove('hidden');
+                }
+            });
+
+            megaMenu.addEventListener('mouseleave', function() {
+                megaMenu.classList.add('hidden');
+                megaMenu.classList.remove('show');
+                if (megaMenuBg) {
+                    megaMenuBg.classList.add('hidden');
+                }
+                
+                // Reset active states
+                megaCategoryItems.forEach(item => item.classList.remove('active'));
+                megaSubcategoryContents.forEach(content => {
+                    content.classList.add('hidden');
+                    content.classList.remove('show');
+                });
+            });
+        }
+    }
+
+    // Close mega menu when clicking on background
+    if (megaMenuBg) {
+        megaMenuBg.addEventListener('click', function() {
+            megaMenu.classList.add('hidden');
+            megaMenu.classList.remove('show');
+            megaMenuBg.classList.add('hidden');
+            
+            // Reset active states
+            megaCategoryItems.forEach(item => item.classList.remove('active'));
+            megaSubcategoryContents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('show');
+            });
+        });
+    }
+
+    // Handle category item hover (level 2)
+    megaCategoryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Remove active class from all items
+            megaCategoryItems.forEach(catItem => catItem.classList.remove('active'));
+            
+            // Add active class to current item
+            this.classList.add('active');
+            
+            // Hide all subcategory contents
+            megaSubcategoryContents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('show');
+            });
+            
+            // Show the selected subcategory content
+            const targetContent = document.querySelector(`.mega-subcategory-content[data-category="${category}"]`);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                targetContent.classList.add('show');
+            }
+        });
+    });
+
+    // Handle subcategory item hover (level 3)
+    let subcategoryItems = document.querySelectorAll('[data-subcategory]');
+    subcategoryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const subcategory = this.getAttribute('data-subcategory');
+            
+            // Remove active class from all subcategory items
+            subcategoryItems.forEach(subItem => subItem.classList.remove('active'));
+            
+            // Add active class to current item
+            this.classList.add('active');
+        });
+    });
+});

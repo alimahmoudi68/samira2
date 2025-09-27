@@ -25,14 +25,14 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<div class="navigationHandler w-full border brder-red-500 p-5 mb-[20px] md:hidden bg-primary-100 text-textPrimary-100 text-center hover:cursor-pointer">دسترسی سریع</div>
+<div class="navigationHandler w-full border brder-red-500 p-5 mb-[20px] md:hidden bg-primary-100 text-text-primary-100 text-center hover:cursor-pointer">دسترسی سریع</div>
 
 <div class="dashboard-container w-full">
 
 
 	<?php do_action( 'woocommerce_account_navigation' ); ?>
 
-	<div class="woocommerce-MyAccount-content w-full mb-[20px] bg-white-100 text-textPrimary-100 rounded-lg p-5 md:w-9/12">
+	<div class="woocommerce-MyAccount-content w-full mb-[20px] bg-white-100 text-text-primary-100 rounded-lg p-5 md:w-9/12">
 		<?php
 			/**
 			 * My Account content.

@@ -96,7 +96,7 @@ return;
                     <span class="ml-2">
                         انتخاب دسته آگهی
                     </span>
-                    <select name="cat" class="w-full outline-none p-2 border border-gray-200 bg-white-100 grow rounded-md">
+                    <select name="cat" class="w-full outline-hidden p-2 border border-gray-200 bg-white-100 grow rounded-md">
                         <option value="0">انتخاب کنید</option>
                         <?php foreach ($listUsersCourses as $course) { ?>
                         <option value="<?php echo $course->id ?>"><?php echo $course->title ?></option>
@@ -108,7 +108,7 @@ return;
                     <span class="ml-2">
                         عنوان آگهی
                     </span>
-                    <input class="w-full p-2 border border-gray-200 bg-white-100 outline-none grow rounded-md"
+                    <input class="w-full p-2 border border-gray-200 bg-white-100 outline-hidden grow rounded-md"
                         name="_themename-advert-create-title"
                         value="<?php if ( isset( $_POST['_themename-advert-create-title'] ) ) echo $_POST['_themename-advert-create-title']; ?>" />
                     <small class="w-full text-start font-semibold text-red-400 mt-1 invisible">خطا</small>
@@ -118,7 +118,7 @@ return;
                         متن آگهی
                     </span>
                     <textarea rows="5" name="_themename-advert-create-content"
-                        class="w-full p-2 border border-gray-200 bg-white-100 outline-none grow rounded-md"><?php if ( isset( $_POST['_themename-advert-create-content'] ) ) { if ( function_exists( 'stripslashes' ) ) { echo stripslashes( $_POST['_themename-advert-create-content'] ); } else { echo $_POST['_themename-advert-create-content']; } } ?></textarea>
+                        class="w-full p-2 border border-gray-200 bg-white-100 outline-hidden grow rounded-md"><?php if ( isset( $_POST['_themename-advert-create-content'] ) ) { if ( function_exists( 'stripslashes' ) ) { echo stripslashes( $_POST['_themename-advert-create-content'] ); } else { echo $_POST['_themename-advert-create-content']; } } ?></textarea>
                         <small class="w-full text-start font-semibold text-red-400 mt-1 invisible">خطا</small>
                 </div>
             </div>
@@ -130,7 +130,7 @@ return;
             </div>
             <div class='w-full flex justify-end items-center mt-5'>
                 <button id="btn-submit" type="submit" value="SUBMIT" name="_themename-advert-create-submit"
-                    class="w-[60px] btn btn-remove-customer ml-1 text-[0.9rem] py-1 px-2 bg-primary-100 text-textPrimary-100 outline-none rounded-lg hover:opacity-80">
+                    class="w-[60px] btn btn-remove-customer ml-1 text-[0.9rem] py-1 px-2 bg-primary-100 text-text-primary-100 outline-hidden rounded-lg hover:opacity-80">
                     ثبت
                 </button>
             </div> 

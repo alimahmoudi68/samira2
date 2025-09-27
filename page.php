@@ -11,7 +11,7 @@ if(!is_user_logged_in() && $pagename == 'my-account') {
     <div class="container mx-auto px-6 pt-[100px] md:pt-[140px] md:pb-[100px]">
         <?php while(have_posts()) : the_post(); ?>
 
-        <h1 class="mb-5 font-bold text-xl md:text-2xl text-textPrimary-100">
+        <h1 class="mb-5 font-bold text-xl md:text-2xl text-text-primary-100">
             <?php the_title(); ?>
         </h1> 
 

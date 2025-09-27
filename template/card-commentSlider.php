@@ -3,7 +3,7 @@
     <div class=' w-full overflow-hidden card-image-container rounded-lg'>
         <?php the_post_thumbnail(); ?>
     </div>
-    <div class='absolute md:top-0 md:left-0 md:right-0 md:bottom-0 left-[50%] translate-x-[-50%] md:translate-x-[0] bottom-[40px] px-4 py-2 rounded-lg md:opacity-0 bg-dark-80 md:group-hover:opacity-100 flex items-center duration-[1000ms] justify-center'>
+    <div class='absolute md:top-0 md:left-0 md:right-0 md:bottom-0 left-[50%] translate-x-[-50%] md:translate-x-[0] bottom-[40px] px-4 py-2 rounded-lg md:opacity-0 bg-dark-80 md:group-hover:opacity-100 flex items-center duration-1000 justify-center'>
       
     </div>
 

@@ -141,7 +141,7 @@ function upload_user_file( $file = array() ) {
     <div class="container mx-auto ">
         <div class='w-full text-[0.9rem] font-normal text-start border-collapse overflow-x-auto bg-white-100 p-5'>
 
-            <span class="text-[1.2rem] text-gray-700 dark:text-textPrimary-100 font-black mb-5 block">
+            <span class="text-[1.2rem] text-gray-700 dark:text-text-primary-100 font-black mb-5 block">
                 ثبت تیکت جدید        
             </span>
 
@@ -153,7 +153,7 @@ function upload_user_file( $file = array() ) {
                         <span class="ml-2">
                             انتخاب دوره
                         </span>
-                        <select name="courseId" class="w-full outline-none p-2 border border-gray-200 bg-white-100 grow rounded-md">
+                        <select name="courseId" class="w-full outline-hidden p-2 border border-gray-200 bg-white-100 grow rounded-md">
                             <option value="0">انتخاب کنید</option>
                             <?php foreach ($listUsersCourses as $course) { ?>
                             <option value="<?php echo $course->id ?>"><?php echo $course->title ?></option>
@@ -165,7 +165,7 @@ function upload_user_file( $file = array() ) {
                         <span class="ml-2">
                             عنوان سوال
                         </span>
-                        <input class="w-full p-2 border border-gray-200 bg-white-100 outline-none grow rounded-md"
+                        <input class="w-full p-2 border border-gray-200 bg-white-100 outline-hidden grow rounded-md"
                             name="title"
                             value="" />
                         <small class="w-full text-start font-semibold text-red-400 mt-1 invisible">خطا</small>
@@ -175,7 +175,7 @@ function upload_user_file( $file = array() ) {
                             متن سوال
                         </span>
                         <textarea rows="5" name="body"
-                            class="w-full p-2 border border-gray-200 bg-white-100 outline-none grow rounded-md"><?php if ( isset( $_POST['body'] ) ) { if ( function_exists( 'stripslashes' ) ) { echo stripslashes( $_POST['_themename-advert-create-content'] ); } else { echo $_POST['_themename-advert-create-content']; } } ?></textarea>
+                            class="w-full p-2 border border-gray-200 bg-white-100 outline-hidden grow rounded-md"><?php if ( isset( $_POST['body'] ) ) { if ( function_exists( 'stripslashes' ) ) { echo stripslashes( $_POST['_themename-advert-create-content'] ); } else { echo $_POST['_themename-advert-create-content']; } } ?></textarea>
                             <small class="w-full text-start font-semibold text-red-400 mt-1 invisible">خطا</small>
                     </div>
                 </div>
@@ -188,7 +188,7 @@ function upload_user_file( $file = array() ) {
                 </div>
                 <div class='w-full flex justify-end items-center mt-5'>
                     <button id="btn-submit" type="submit" value="SUBMIT" name="_themename-advert-create-submit"
-                        class="btn btn-remove-customer text-[1rem] py-2 px-3 bg-primary-100 text-textPrimary-100 outline-none rounded-lg hover:opacity-80 border border-primary-100 hover:text-primary-100 hover:bg-white-100">
+                        class="btn btn-remove-customer text-[1rem] py-2 px-3 bg-primary-100 text-text-primary-100 outline-hidden rounded-lg hover:opacity-80 border border-primary-100 hover:text-primary-100 hover:bg-white-100">
                         ثبت تیکت
                     </button>
                 </div> 

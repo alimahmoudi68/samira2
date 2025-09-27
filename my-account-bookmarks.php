@@ -30,7 +30,7 @@ return;
                     xmlns="http://www.w3.org/2000/svg">
                     <circle cx="50" cy="50" r="50" />
                 </svg>
-                <span class='text-gray-600 dark:text-textPrimary-100 text-xl font-extrabold'>نشان شده‌ها</span>
+                <span class='text-gray-600 dark:text-text-primary-100 text-xl font-extrabold'>نشان شده‌ها</span>
             </div>
 
        
@@ -41,14 +41,14 @@ return;
                     foreach ($bookmarks as $value) { ?>
                         <div remove-set="<?php echo $i ?>" class="flex items-center justify-between border border-gray-200 border-r-4 border-r-primary-100 rounded-md p-5">
                             <div class='flex flex-col items-start justify-center'>
-                                <span class="font-medium text-lg text-gray-700 dark:text-textPrimary-100 ">
+                                <span class="font-medium text-lg text-gray-700 dark:text-text-primary-100 ">
                                     <?php echo  the_date($value->post_title); ?>
                                 </span>
                                 <div class='flex items-center mt-2'>
-                                    <a href="<?php echo get_permalink( $value->ID ) ?>" class="text-[0.9rem] border cursor-pointer duration-200 border-primary-100 bg-primary-100 hover:bg-white-100 px-[12px] py-[5px] text-textPrimary-100 hover:text-primary-100 font-medium rounded-lg">
+                                    <a href="<?php echo get_permalink( $value->ID ) ?>" class="text-[0.9rem] border cursor-pointer duration-200 border-primary-100 bg-primary-100 hover:bg-white-100 px-[12px] py-[5px] text-text-primary-100 hover:text-primary-100 font-medium rounded-lg">
                                         مشاهده
                                     </a>
-                                    <div  data-set="<?php echo $value->ID  ?>"  class="btn-remove-bookmark text-[0.9rem] border cursor-pointer duration-200 border-red-500 bg-red-500 hover:bg-white-100 px-[12px] py-[5px] text-textPrimary-100 hover:text-red-500 font-medium rounded-lg mr-2"  data-set="<?php echo $value->ID ?>">
+                                    <div  data-set="<?php echo $value->ID  ?>"  class="btn-remove-bookmark text-[0.9rem] border cursor-pointer duration-200 border-red-500 bg-red-500 hover:bg-white-100 px-[12px] py-[5px] text-text-primary-100 hover:text-red-500 font-medium rounded-lg mr-2"  data-set="<?php echo $value->ID ?>">
                                         حذف از نشان شده‌ها
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ return;
     </div>
 </main>
 
-<div id="back-modal-remove" class='hidden w-full h-full z-60 fixed top-0 left-0 right-0 bg-modalBackground-100'></div>
+<div id="back-modal-remove" class='hidden w-full h-full z-60 fixed top-0 left-0 right-0 bg-modal-background-100'></div>
 <div id="modal-remove"
     class='h-fit w-10/12 max-w-[600px] fixed z-70 bg-white-100 dark:bg-dark-100 rounded-md left-0 right-0 top-0 bottom-0 m-auto hidden'>
     <div class='w-full h-full flex flex-col justify-center items-start p-5 overflow-y-auto'>
@@ -90,10 +90,10 @@ return;
             از حذف این دوره از لیست نشان شده‌ها اطمینان دارید؟
         </span>
         <div class='w-full flex justify-end items-center mt-3'>
-            <button id="btn-submit" class="w-[60px] btn btn-remove-customer ml-1 text-[0.9rem] py-1 px-2 bg-primary-100 text-textPrimary-100 outline-none rounded-lg hover:opacity-80">
+            <button id="btn-submit" class="w-[60px] btn btn-remove-customer ml-1 text-[0.9rem] py-1 px-2 bg-primary-100 text-text-primary-100 outline-hidden rounded-lg hover:opacity-80">
                     بله
             </button>
-            <button id="btn-close" class="w-[60px] btn text-[0.9rem] py-1 px-2 bg-red-500 text-textPrimary-100 outline-none rounded-lg hover:opacity-80">
+            <button id="btn-close" class="w-[60px] btn text-[0.9rem] py-1 px-2 bg-red-500 text-text-primary-100 outline-hidden rounded-lg hover:opacity-80">
                 خیر
             </button>
         </div>

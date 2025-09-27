@@ -36,7 +36,7 @@
                 </span>
             </div>
             <div
-                class='w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-slate-500 dark:text-textPrimary-100'>
+                class='w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-slate-500 dark:text-text-primary-100'>
                 <a href="<?php the_permalink() ?>">
                 <?php the_title(); ?>
                 </a>
@@ -67,7 +67,7 @@
         ?>
         </div>
         <div class='w-full flex justify-between items-end text-sm font-light h-[40px]'>
-            <div class='flex justify-center items rounded-md bg-slate-200 dark:bg-sky-900 dark:text-textPrimary-100 p-1'>
+            <div class='flex justify-center items rounded-md bg-slate-200 dark:bg-sky-900 dark:text-text-primary-100 p-1'>
                 <svg class="m w-4 h-4 ml-1" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M1.29921 7.10036C1.29921 8.47492 1.37342 9.55017 1.56095 10.394C1.74739 11.2329 2.04007 11.8164 2.45902 12.2353C2.87796 12.6543 3.4615 12.947 4.30041 13.1334C5.14419 13.3209 6.21945 13.3952 7.594 13.3952C8.96856 13.3952 10.0438 13.3209 10.8876 13.1334C11.7265 12.947 12.31 12.6543 12.729 12.2353C13.1479 11.8164 13.4406 11.2329 13.6271 10.394C13.8146 9.55017 13.8888 8.47492 13.8888 7.10036C13.8888 5.72581 13.8146 4.65055 13.6271 3.80677C13.4406 2.96786 13.1479 2.38432 12.729 1.96538C12.31 1.54643 11.7265 1.25375 10.8876 1.06731C10.0438 0.879784 8.96856 0.805572 7.594 0.805572C6.21945 0.805572 5.14419 0.879784 4.30041 1.06731C3.4615 1.25375 2.87796 1.54643 2.45902 1.96538C2.04007 2.38432 1.74739 2.96786 1.56095 3.80677C1.37342 4.65055 1.29921 5.72581 1.29921 7.10036Z"
@@ -82,7 +82,7 @@
                     <?php echo $time; ?>
                 </span>
             </div>
-            <div class='font-medium dark:text-textPrimary-100'>
+            <div class='font-medium dark:text-text-primary-100'>
                 <?php 
                 if($type !== 'free'){
                 ?>

@@ -164,15 +164,7 @@ if(is_admin()){
 }
 
 
-// fehrestha
-function register_my_menus() {
-	register_nav_menus(
-		array(
-		'header_left' => __( 'سمت چپ هدر' ),
-		)
-	);    
-}
-add_action( 'init', 'register_my_menus' );
+// fehrestha - moved to functions/menu.php
 
 
 function my_setup(){
@@ -366,7 +358,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'refresh_cart_count', 50, 1 );
 function refresh_cart_count( $fragments ){
     ob_start();
     ?>
-    <span id="cart-count" class="w-[17px] h-[17px] leading-[15px] text-[0.7rem] absolute top-[-4px] right-[4px] rounded-full bg-primary-100 px-[4px] py-[1px] tex-sm text-textPrimary-100"><?php
+    <span id="cart-count" class="w-[17px] h-[17px] leading-[15px] text-[0.7rem] absolute top-[-4px] right-[4px] rounded-full bg-primary-100 px-[4px] py-px tex-sm text-text-primary-100"><?php
     $cart_count = WC()->cart->get_cart_contents_count();
     echo sprintf ( _n( '%d', '%d', $cart_count ), $cart_count );
     ?></span>
@@ -502,6 +494,9 @@ function get_user_ip() {
 require_once dirname( __FILE__ ) . '/functions/metadatas/product-metabox.php';
 require_once dirname( __FILE__ ) . '/functions/metadatas/tutor-metabox.php';
 require_once dirname( __FILE__ ) . '/functions/metadatas/review-metabox.php';
+
+// menu functions
+require_once dirname( __FILE__ ) . '/functions/menu.php';
 
 // rewrites
 require_once dirname( __FILE__ ) . '/functions/courses_rewrite.php';

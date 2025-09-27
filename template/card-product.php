@@ -17,7 +17,7 @@
 
 ?>
     <div
-        class='card-product w-full md:w-[48%] lg:w-[32%] xl:w-[24%] flex flex-col items-center h-full transition-all duration-300 rounded-lg bg-darkCard-100 relative'>
+        class='card-product w-full md:w-[48%] lg:w-[32%] xl:w-[24%] flex flex-col items-center h-full transition-all duration-300 rounded-lg bg-dark-card-100 relative'>
         <div class='w-full overflow-hidden card-image-container rounded-lg'>
             <a href="<?php the_permalink() ?>">
                 <?php the_post_thumbnail('post'); ?>
@@ -44,7 +44,7 @@
                 </span>
             </div>
             <div
-                class='w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-textPrimary-100'>
+                class='w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-text-primary-100'>
                 <a href="<?php the_permalink() ?>">
                 <?php the_title(); ?>
                 </a>
@@ -64,7 +64,7 @@
             ?>
             <div class="flex items-center teacher-sec">
                 <?php the_post_thumbnail('profile'); ?>
-                <span class="text-sm font-light text-textPrimary-100">
+                <span class="text-sm font-light text-text-primary-100">
                     <?php the_title(); ?>
                 </span>
             </div>
@@ -76,7 +76,7 @@
         </div>
         <div class='w-full flex justify-between items-end text-sm font-light h-[40px] p-3'>
             <div class='flex items-center'>
-                <div class='flex justify-center items rounded-md bg-darkBack-100 text-textPrimary-100 p-1'>
+                <div class='flex justify-center items rounded-md bg-dark-back-100 text-text-primary-100 p-1'>
                     <svg class="m w-4 h-4 ml-1" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M1.29921 7.10036C1.29921 8.47492 1.37342 9.55017 1.56095 10.394C1.74739 11.2329 2.04007 11.8164 2.45902 12.2353C2.87796 12.6543 3.4615 12.947 4.30041 13.1334C5.14419 13.3209 6.21945 13.3952 7.594 13.3952C8.96856 13.3952 10.0438 13.3209 10.8876 13.1334C11.7265 12.947 12.31 12.6543 12.729 12.2353C13.1479 11.8164 13.4406 11.2329 13.6271 10.394C13.8146 9.55017 13.8888 8.47492 13.8888 7.10036C13.8888 5.72581 13.8146 4.65055 13.6271 3.80677C13.4406 2.96786 13.1479 2.38432 12.729 1.96538C12.31 1.54643 11.7265 1.25375 10.8876 1.06731C10.0438 0.879784 8.96856 0.805572 7.594 0.805572C6.21945 0.805572 5.14419 0.879784 4.30041 1.06731C3.4615 1.25375 2.87796 1.54643 2.45902 1.96538C2.04007 2.38432 1.74739 2.96786 1.56095 3.80677C1.37342 4.65055 1.29921 5.72581 1.29921 7.10036Z"
@@ -91,7 +91,7 @@
                         <?php echo get_total_time_course($episodes); ?>
                     </span>
                 </div>
-                <div class='flex justify-center items rounded-md bg-darkBack-100 text-textPrimary-100 p-1'>
+                <div class='flex justify-center items rounded-md bg-dark-back-100 text-text-primary-100 p-1'>
                     <svg class="m w-4 h-4 ml-1" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M1.29921 7.10036C1.29921 8.47492 1.37342 9.55017 1.56095 10.394C1.74739 11.2329 2.04007 11.8164 2.45902 12.2353C2.87796 12.6543 3.4615 12.947 4.30041 13.1334C5.14419 13.3209 6.21945 13.3952 7.594 13.3952C8.96856 13.3952 10.0438 13.3209 10.8876 13.1334C11.7265 12.947 12.31 12.6543 12.729 12.2353C13.1479 11.8164 13.4406 11.2329 13.6271 10.394C13.8146 9.55017 13.8888 8.47492 13.8888 7.10036C13.8888 5.72581 13.8146 4.65055 13.6271 3.80677C13.4406 2.96786 13.1479 2.38432 12.729 1.96538C12.31 1.54643 11.7265 1.25375 10.8876 1.06731C10.0438 0.879784 8.96856 0.805572 7.594 0.805572C6.21945 0.805572 5.14419 0.879784 4.30041 1.06731C3.4615 1.25375 2.87796 1.54643 2.45902 1.96538C2.04007 2.38432 1.74739 2.96786 1.56095 3.80677C1.37342 4.65055 1.29921 5.72581 1.29921 7.10036Z"
@@ -107,7 +107,7 @@
                     </span>
                 </div>
             </div>
-            <div class='flex flex-col font-medium text-textPrimary-100'>
+            <div class='flex flex-col font-medium text-text-primary-100'>
                 <?php 
                 if($type !== 'free'){
                 ?>
@@ -116,7 +116,7 @@
                     <?php echo $formatted_sale_price; ?>
                 </span>
                 <?php } ?>
-                <span class='text-textPrimary-100'>
+                <span class='text-text-primary-100'>
                     <?php echo $formatted_regular_price; ?>
                 </span>
                 <?php  }else{ ?>

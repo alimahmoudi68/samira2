@@ -9,7 +9,7 @@
             <circle cx="30" cy="13" r="7" fill="currentColor" fill-opacity="0.4"></circle>
             <circle cx="15" cy="4" r="4" fill="currentColor" fill-opacity="0.7"></circle>
         </svg>
-        <div class='sec-clip-title text-xl	font-semibold text-gray-700 dark:text-textPrimary-100	py-[10px] border-b-[3px] border-primary-100'>
+        <div class='sec-clip-title text-xl	font-semibold text-gray-700 dark:text-text-primary-100	py-[10px] border-b-[3px] border-primary-100'>
         
             <span>رخ‌تاپ تی‌وی</span>
             <?php

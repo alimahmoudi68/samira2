@@ -35,7 +35,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<div class="checkout-container mb-[32px] bg-white-100 text-textPrimary-100">
+		<div class="checkout-container mb-[32px] bg-white-100 text-text-primary-100">
 			<div class="col2-set card w-full lg:w-6/12" id="customer_details">
 
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>

@@ -64,11 +64,11 @@ function stateToText($status){
       
             <div class='w-full text-[0.9rem] font-normal text-start border-collapse overflow-x-auto bg-white-100 p-5'>
 
-            <span class="text-[1.2rem] text-gray-700 dark:text-textPrimary-100 font-black">
+            <span class="text-[1.2rem] text-gray-700 dark:text-text-primary-100 font-black">
                 تیکت‌ها        
             </span>
             <div class='w-full flex justify-end mb-5'>
-                <a class="bg-primary-100 border border-primary-100 py-1 px-3 rounded-md text-textPrimary-100 hover:bg-white-100 dark:hover:bg-dark-100 hover:text-primary-100 transition-all"                     
+                <a class="bg-primary-100 border border-primary-100 py-1 px-3 rounded-md text-text-primary-100 hover:bg-white-100 dark:hover:bg-dark-100 hover:text-primary-100 transition-all"                     
                         href="<?php echo home_url('/my-account/new-ticket')?>">
                     تیکت جدید
                 </a>
@@ -76,7 +76,7 @@ function stateToText($status){
 
 
             <?php if($tickets){ ?>
-            <table class="w-full table text-gray-700 dark:text-textPrimary-100 text-center">
+            <table class="w-full table text-gray-700 dark:text-text-primary-100 text-center">
                 <thead>
                     <tr>
                         <th class='min-w-[120px] font-semibold border-none align-middle h-20'>شماره</th>
@@ -107,7 +107,7 @@ function stateToText($status){
                             <?php echo $value->lastUpdate  ?></td>
                         </td>
                         <td class='font-normal border-none align-middle h-20'>
-                            <a class="bg-primary-100 border border-primary-100 py-1 px-3 rounded-md text-textPrimary-100 hover:bg-white-100 dark:hover:bg-dark-100 hover:text-primary-100 transition-all"
+                            <a class="bg-primary-100 border border-primary-100 py-1 px-3 rounded-md text-text-primary-100 hover:bg-white-100 dark:hover:bg-dark-100 hover:text-primary-100 transition-all"
                                 href="<?php echo home_url('/my-account/ticket?id=' . $value->id )?>">
                                 مشاهده
                             </a>

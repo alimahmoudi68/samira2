@@ -27,8 +27,8 @@ get_header( 'shop' );
 		</div>
 	</div>
 	<div class="container mx-auto archve-product">
-		<div class='my-5 py-2 dark:text-textPrimary-100'>
-			<span class="text-xl md:text-3xl font-bold text-slate-700 dark:text-textPrimary-100">دوره‌ها</span>
+		<div class='my-5 py-2 dark:text-text-primary-100'>
+			<span class="text-xl md:text-3xl font-bold text-slate-700 dark:text-text-primary-100">دوره‌ها</span>
 		</div>
 		<div class="w-full flex flex-wrap">
 			<div class="w-full md:w-9/12 md:order-2 woocommerce">

@@ -106,7 +106,7 @@ function getData (){
         loading.classList.add('hidden');
         postsList.innerHTML = '' ;
 
-        postsList.innerHTML += "<div id='loading' class='w-full h-full hidden flex items-center p-5 justify-center rounded-lg bg-darkBack-100 absolute top-0 left-0 z-[999]'><div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div></div>" ;
+        postsList.innerHTML += "<div id='loading' class='w-full h-full hidden flex items-center p-5 justify-center rounded-lg bg-dark-back-100 absolute top-0 left-0 z-999'><div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div></div>" ;
         if(res.data.success){
 
             postsList.innerHTML += res.data.data ;
@@ -177,9 +177,9 @@ btnSortNewest.addEventListener('click' , ()=>{
     queryParams.delete('p');
     history.replaceState(null, null, "?"+queryParams.toString());
 
-    btnSortNewest.classList.add('bg-darkBack-100');
-    btnSortCheapest.classList.remove('bg-darkBack-100');
-    btnSortExpensive.classList.remove('bg-darkBack-100');
+    btnSortNewest.classList.add('bg-dark-back-100');
+    btnSortCheapest.classList.remove('bg-dark-back-100');
+    btnSortExpensive.classList.remove('bg-dark-back-100');
 
     getData();
 
@@ -192,9 +192,9 @@ btnSortCheapest.addEventListener('click' , ()=>{
     queryParams.delete('p');
     history.replaceState(null, null, "?"+queryParams.toString());
 
-    btnSortNewest.classList.remove('bg-darkBack-100');
-    btnSortCheapest.classList.add('bg-darkBack-100');
-    btnSortExpensive.classList.remove('bg-darkBack-100');
+    btnSortNewest.classList.remove('bg-dark-back-100');
+    btnSortCheapest.classList.add('bg-dark-back-100');
+    btnSortExpensive.classList.remove('bg-dark-back-100');
 
     getData();
 });
@@ -206,9 +206,9 @@ btnSortExpensive.addEventListener('click' , ()=>{
     queryParams.delete('p');
     history.replaceState(null, null, "?"+queryParams.toString());
 
-    btnSortNewest.classList.remove('bg-darkBack-100');
-    btnSortCheapest.classList.remove('bg-darkBack-100');
-    btnSortExpensive.classList.add('bg-darkBack-100');
+    btnSortNewest.classList.remove('bg-dark-back-100');
+    btnSortCheapest.classList.remove('bg-dark-back-100');
+    btnSortExpensive.classList.add('bg-dark-back-100');
 
     getData();
 

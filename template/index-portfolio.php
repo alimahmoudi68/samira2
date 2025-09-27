@@ -13,7 +13,7 @@ $portfolios = new WP_Query($args);
 if ($portfolios->have_posts()) {
 ?>
 
-<div class='text-lg flex items-center font-semibold py-2 text-textPrimary-100'>
+<div class='text-lg flex items-center font-semibold py-2 text-text-primary-100'>
     <span class="text-xl md:text-3xl font-bold">آخرین نمونه کارها</span>
 </div>
 

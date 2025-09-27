@@ -9,13 +9,13 @@ if($products->have_posts()){
 ?>
 
 <div id='new-courses' class='flex justify-between mb-2 md:mb-6'>
-    <div class='text-lg flex items-center font-semibold py-2 text-textPrimary-100'>
+    <div class='text-lg flex items-center font-semibold py-2 text-text-primary-100'>
         <div class='w-[20px] h-[20px] rounded-md bg-primary-100 ml-2'></div>
         <span class="text-xl md:text-3xl font-bold">جدیدترین دوره‌های</span>
     </div>
     <div class='py-2 flex items-center'>
         <a href="<?php echo home_url(); ?>/courses"
-            class='text-sm md:text-base transition-all duration-150 hover:text-primary-100 text-textPrimary-100 dark:hover:text-primary-100'>
+            class='text-sm md:text-base transition-all duration-150 hover:text-primary-100 text-text-primary-100 dark:hover:text-primary-100'>
             مشاهده همه 
         </a>
     </div>

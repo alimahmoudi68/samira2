@@ -9,13 +9,13 @@ if($products->have_posts()){
 ?>
 
 <div class='flex justify-between mb-2 md:mb-6'>
-    <div class='text-lg flex items-center font-semibold text-gray-600 py-2 dark:text-textPrimary-100'>
+    <div class='text-lg flex items-center font-semibold text-gray-600 py-2 dark:text-text-primary-100'>
         <div class='hidden md:block md:w-[20px] md:h-[20px] rounded-md bg-primary-100 ml-2'></div>
         <span class="text-xl md:text-3xl font-bold">جدیدترین مقاله‌ها</span>
     </div>
     <div class='py-2 flex items-center'>
         <a href="<?php echo home_url(); ?>/courses"
-            class='text-sm md:text-base transition-all duration-150 text-gray-500 hover:text-primary-100 dark:text-textPrimary-100 dark:hover:text-primary-100'>
+            class='text-sm md:text-base transition-all duration-150 text-gray-500 hover:text-primary-100 dark:text-text-primary-100 dark:hover:text-primary-100'>
             مشاهده همه مقاله‌ها
             <svg class='w-4 h-4 inline mr-1 sm:h-6 sm:w-6 rotate-90' viewBox="0 0 14 21" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

@@ -8,7 +8,7 @@ $tvs = new WP_Query(
 if($tvs->have_posts()){
 ?>
 <div class='flex justify-between mb-5 mt-3'>
-    <div class='text-lg font-semibold text-gray-600 py-2 dark:text-textPrimary-100'>
+    <div class='text-lg font-semibold text-gray-600 py-2 dark:text-text-primary-100'>
         <svg class="inline text-dark-600 dark:text-white ml-1" width="37" height="34" viewBox="0 0 37 34" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="24" r="10" fill="currentColor"></circle>
@@ -19,7 +19,7 @@ if($tvs->have_posts()){
     </div>
     <div class='py-2 flex items-center'>
         <a href='<?php echo get_post_type_archive_link('salon'); ?>'
-            class='text-sm md:text-base transition-all duration-150 text-gray-500 hover:text-primary-100 dark:text-textPrimary-100 dark:hover:text-primary-100'>
+            class='text-sm md:text-base transition-all duration-150 text-gray-500 hover:text-primary-100 dark:text-text-primary-100 dark:hover:text-primary-100'>
             مشاهده همه سالن‌ها
             <svg class='w-4 h-4 inline mr-1 sm:h-6 sm:w-6 rotate-90' viewBox="0 0 14 21" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

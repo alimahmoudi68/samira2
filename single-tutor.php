@@ -73,10 +73,10 @@
             <div class=' bg-white-100 rounded-xl mt-3 p-3 md:mt-0 md:ml-4 dark:bg-dark-100 dark:border-cyan-500 sticky top-[10px]'>
                 <div class='teacher-prof flex flex-col justify-center items-center p-3 mt-3 md:mt-2 md:ml-3 dark:bg-dark-50 dark:shadow-none'>
                     <?php the_post_thumbnail('teacher'); ?>
-                    <span class='text-[0.9rem] text-justify font-normal	text-gray-400 dark:text-textPrimary-100'>
+                    <span class='text-[0.9rem] text-justify font-normal	text-gray-400 dark:text-text-primary-100'>
                         <?php the_title(); ?>
                     </span>
-                    <span class='text-[0.9rem] text-justify font-normal	my-2 text-gray-500 dark:text-textPrimary-100'>
+                    <span class='text-[0.9rem] text-justify font-normal	my-2 text-gray-500 dark:text-text-primary-100'>
                     <?php the_excerpt(); ?>
                     </span>
                 </div>
