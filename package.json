@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "w": "npx tailwindcss -i ./input-style.css -o ./css/style2.css --watch",
+    "b": "npx tailwindcss -i ./input-style.css -o ./css/style2.css --minify"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
