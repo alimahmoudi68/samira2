@@ -6,7 +6,7 @@ global $my_opt;
     <div class="container mx-auto">
       <div class='w-fll flex flex-wrap justify-around md:justify-between'>
         <div class='w-full text-center py-3 md:w-[20%]'>
-          <div class='bg-primary-100 p-3 rounded-lg mb-3 md:mt-[-80px]'>
+          <div class='bg-primary-100 p-3 rounded-lg mb-3'>
               <span class='block text-[1.2rem] mb-5 font-bold'>
                 <?php echo get_bloginfo('name'); ?>
               </span>
@@ -39,21 +39,6 @@ global $my_opt;
                 <?php } ?>
               </div>
             </div>
-        </div>
-        <div class='w-full md:w-[25%] md:text-start py-3 md:pr-20'>
-          <span class='block text-[1.2rem] mb-5 font-bold'>دسترسی سریع</span>
-          <a class='block flex justify-center md:justify-start items-center'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-[16px] h-[16px] stroke-primary-100 ml-1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-            </svg>
-            صفحه اصلی 
-          </a>
-          <a class='block flex justify-center md:justify-start items-center'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-[16px] h-[16px] stroke-primary-100 ml-1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-            </svg>
-            درباره ما
-          </a>
         </div>
         <div class='w-full md:w-[25%] md:text-start py-3 md:pr-10'>
           <span class='block text-[1.2rem] mb-5 font-bold'>راه‌های ارتباطی</span>
