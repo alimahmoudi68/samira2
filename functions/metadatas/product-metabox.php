@@ -89,76 +89,7 @@ $teacher_box->add_field( array(
 }
 
 
-// -------- additional meta -------------
-add_action( 'cmb2_admin_init', 'cmb2_additional_product_metaboxes' );
 
-function cmb2_additional_product_metaboxes() {
-$additional_box = new_cmb2_box( array(
-	'id'            => 'additional_product_box_metabox',
-	'title'         => __( 'اطلاعات تکمیلی', 'cmb2' ),
-	'object_types'  => array( 'product', ), // Post type
-	'context'       => 'normal',
-	'priority'      => 'high',
-	'show_names'    => true, // Show field names on the left
-	// 'cmb_styles' => false, // false to disable the CMB stylesheet
-	// 'closed'     => true, // Keep the metabox closed by default
-) );
-
-
-$additional_box->add_field( array(
-	'name'             => 'نوع دوره',
-	'desc'             => 'نوع دوره را انتخاب کنید',
-	'id'               => 'product_type',
-	'type'             => 'select',
-	'show_option_none' => true,
-	'default'          => 'custom',
-	'options'          => array(
-        'free' => __( 'رایگان', 'cmb2' ),
-        'cash'   => __( 'نقدی', 'cmb2' ),
-    ),
-) );
-
-$additional_box->add_field( array(
-	'name'             => 'وضعیت دوره',
-	'desc'             => 'وضعیت دوره را انتخاب کنید',
-	'id'               => 'product_status',
-	'type'             => 'select',
-	'show_option_none' => true,
-	'default'          => 'custom',
-	'options'          => array(
-        'soon' => __( 'به زودی', 'cmb2' ),
-        'continue'   => __( 'در حال برگزاری', 'cmb2' ),
-        'finish'     => __( 'تکمیل ضبط', 'cmb2' ),
-    ),
-) );
-
-$additional_box->add_field( array(
-    'name'    => 'روش پشتیبانی',
-    'desc'    => 'روش پشتیانی دوره را بنویسید',
-    'default' => '',
-    'id'      => 'product_support',
-    'type'    => 'text_small'
-) );
-
-
-$additional_box->add_field( array(
-    'name'    => 'روش مشاهده',
-    'desc'    => 'روش مشاهده دوره را بنویسید',
-    'default' => '',
-    'id'      => 'product_view',
-    'type'    => 'text_small'
-) );
-
-$additional_box->add_field( array(
-    'name'    => 'درصد تکمیل',
-    'desc'    => 'درصد تکمیل دوره را با یک عدد انگلیسی بنویسید',
-    'default' => '',
-    'id'      => 'product_complete',
-    'type'    => 'text_small'
-) );
-
-
-}
 
 
 
@@ -331,6 +262,262 @@ function cmb2_faq_product_metaboxes() {
 		'id' => 'answer_product',
 		'type' => 'textarea_small'
 	) );
+}
+
+
+// -------- certificate settings -------------
+add_action( 'cmb2_admin_init', 'cmb2_certificate_product_metaboxes' );
+
+function cmb2_certificate_product_metaboxes() {
+
+	// metabox
+	$certificate_box = new_cmb2_box( array(
+		'id'            => 'certificate_product_box_metabox',
+		'title'         => __( 'تنظیمات مدرک', 'cmb2' ),
+		'object_types'  => array( 'product', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
+	) );
+
+	// Template image
+	$certificate_box->add_field( array(
+		'name'       => __( 'عکس Template مدرک', 'cmb2' ),
+		'id'         => 'certificate_template_image_id',
+		'type'       => 'file',
+		'desc'       => 'عکس template مدرک را آپلود کنید. این عکس به عنوان پس‌زمینه مدرک استفاده می‌شود.',
+		'options' => array(
+			'url' => false, // Hide the text input for the url
+		),
+		'text'    => array(
+			'add_upload_file_text' => 'آپلود عکس Template'
+		),
+		'query_args' => array(
+			'type' => 'image',
+		),
+		'preview_size' => 'medium',
+	) );
+
+	// Section: تنظیمات نام کاربر
+	$certificate_box->add_field( array(
+		'name' => 'تنظیمات نام کاربر',
+		'desc' => 'تنظیمات مربوط به نمایش نام کاربر روی مدرک',
+		'type' => 'title',
+		'id'   => 'certificate_name_settings_title'
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'موقعیت X نام',
+		'desc'    => 'موقعیت افقی نام (از چپ). برای پیدا کردن موقعیت دقیق، از ابزار انتخاب مختصات استفاده کنید.',
+		'default' => '',
+		'id'      => 'certificate_name_x',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '0',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'موقعیت Y نام',
+		'desc'    => 'موقعیت عمودی نام (از بالا). برای پیدا کردن موقعیت دقیق، از ابزار انتخاب مختصات استفاده کنید.',
+		'default' => '',
+		'id'      => 'certificate_name_y',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '0',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'اندازه فونت نام',
+		'desc'    => 'اندازه فونت نام (پیکسل)',
+		'default' => '60',
+		'id'      => 'certificate_name_font_size',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '10',
+			'max' => '200',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'حداکثر عرض نام',
+		'desc'    => 'حداکثر عرض نام (پیکسل). 0 به معنای نامحدود است.',
+		'default' => '0',
+		'id'      => 'certificate_name_max_width',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '0',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'رنگ نام',
+		'desc'    => 'رنگ متن نام (hex)',
+		'default' => '#000000',
+		'id'      => 'certificate_name_color',
+		'type'    => 'colorpicker',
+	) );
+
+	// Section: تنظیمات عکس کاربر
+	$certificate_box->add_field( array(
+		'name' => 'تنظیمات عکس کاربر',
+		'desc' => 'تنظیمات مربوط به نمایش عکس کاربر روی مدرک',
+		'type' => 'title',
+		'id'   => 'certificate_user_image_settings_title'
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'موقعیت X عکس کاربر',
+		'desc'    => 'موقعیت افقی عکس کاربر (از چپ). برای پیدا کردن موقعیت دقیق، از ابزار انتخاب مختصات استفاده کنید.',
+		'default' => '100',
+		'id'      => 'certificate_user_image_x',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '0',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'موقعیت Y عکس کاربر',
+		'desc'    => 'موقعیت عمودی عکس کاربر (از بالا). برای پیدا کردن موقعیت دقیق، از ابزار انتخاب مختصات استفاده کنید.',
+		'default' => '100',
+		'id'      => 'certificate_user_image_y',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '0',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'عرض عکس کاربر',
+		'desc'    => 'عرض عکس کاربر (پیکسل)',
+		'default' => '200',
+		'id'      => 'certificate_user_image_width',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '1',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'ارتفاع عکس کاربر',
+		'desc'    => 'ارتفاع عکس کاربر (پیکسل)',
+		'default' => '200',
+		'id'      => 'certificate_user_image_height',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '1',
+		),
+	) );
+
+	$certificate_box->add_field( array(
+		'name'    => 'شعاع گوشه‌های گرد',
+		'desc'    => 'شعاع گرد کردن گوشه‌های عکس کاربر (پیکسل)',
+		'default' => '20',
+		'id'      => 'certificate_user_image_border_radius',
+		'type'    => 'text_small',
+		'attributes' => array(
+			'type' => 'number',
+			'step' => '1',
+			'min' => '0',
+		),
+	) );
+
+	// ابزار انتخاب مختصات
+	$certificate_box->add_field( array(
+		'name' => 'ابزار انتخاب مختصات',
+		'desc' => 'برای پیدا کردن موقعیت دقیق، ابتدا عکس template را آپلود کنید، سپس روی دکمه زیر کلیک کنید. یک باکس قابل جابجایی روی تصویر نمایش داده می‌شود که می‌توانید آن را با موس جابجا کنید و در موقعیت مناسب قرار دهید. مختصات به صورت خودکار در فیلدهای مربوطه قرار می‌گیرد.',
+		'type' => 'title',
+		'id'   => 'certificate_coordinate_picker_title'
+	) );
+
+	// این فیلد فقط برای نمایش ابزار استفاده می‌شود
+	$certificate_box->add_field( array(
+		'name' => '',
+		'desc' => '<div id="certificate-coordinate-picker-container" style="margin: 15px 0;">
+			<button type="button" id="certificate-picker-btn-name" class="button" style="margin-right: 10px;">انتخاب موقعیت نام</button>
+			<button type="button" id="certificate-picker-btn-image" class="button">انتخاب موقعیت عکس کاربر</button>
+			<button type="button" id="certificate-picker-reset" class="button" style="margin-right: 10px; display: none;">بازنشانی</button>
+			<div id="certificate-picker-preview" style="margin-top: 15px; display: none; position: relative;">
+				<div style="position: relative; display: inline-block;">
+					<img id="certificate-picker-image" style="max-width: 100%; border: 2px solid #0073aa; display: block;" />
+					<!-- باکس قابل جابجایی برای نام -->
+					<div id="certificate-picker-name-box" style="display: none; position: absolute; cursor: move; border: 2px dashed #0073aa; background: rgba(0, 115, 170, 0.1); padding: 10px; min-width: 150px; text-align: center; pointer-events: auto;">
+						<div id="certificate-picker-name-text" style="font-weight: bold; color: #0073aa;">نام نمونه</div>
+					</div>
+					<!-- باکس قابل جابجایی برای عکس کاربر -->
+					<div id="certificate-picker-image-box" style="display: none; position: absolute; cursor: move; border: 2px dashed #ff6b6b; background: rgba(255, 107, 107, 0.1); pointer-events: auto;">
+						<div style="width: 100px; height: 100px; background: #ff6b6b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px; text-align: center; padding: 5px;">عکس کاربر</div>
+					</div>
+				</div>
+				<p id="certificate-picker-instruction" style="margin-top: 10px; color: #666;"></p>
+			</div>
+		</div>',
+		'type' => 'title',
+		'id'   => 'certificate_coordinate_picker_tool'
+	) );
+}
+
+// Enqueue JavaScript for coordinate picker
+add_action( 'admin_enqueue_scripts', 'enqueue_certificate_coordinate_picker_script' );
+function enqueue_certificate_coordinate_picker_script( $hook ) {
+	// فقط در صفحه ویرایش محصول
+	if ( $hook !== 'post.php' && $hook !== 'post-new.php' ) {
+		return;
+	}
+	
+	global $post_type;
+	if ( $post_type !== 'product' ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'certificate-coordinate-picker',
+		get_template_directory_uri() . '/js/admin/certificate-coordinate-picker.js',
+		array( 'jquery' ),
+		'1.0.0',
+		true
+	);
+
+	// Localize script برای ajaxurl
+	wp_localize_script( 'certificate-coordinate-picker', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+}
+
+// AJAX handler برای دریافت URL attachment
+add_action( 'wp_ajax_get_attachment_url', 'get_attachment_url_ajax_handler' );
+function get_attachment_url_ajax_handler() {
+	$attachment_id = isset( $_POST['attachment_id'] ) ? intval( $_POST['attachment_id'] ) : 0;
+	
+	if ( ! $attachment_id ) {
+		wp_send_json_error( array( 'message' => 'Attachment ID is required' ) );
+	}
+
+	$url = wp_get_attachment_url( $attachment_id );
+	
+	if ( $url ) {
+		wp_send_json_success( array( 'url' => $url ) );
+	} else {
+		wp_send_json_error( array( 'message' => 'Attachment not found' ) );
+	}
 }
 
 ?>

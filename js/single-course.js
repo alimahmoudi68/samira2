@@ -1,3 +1,10 @@
+const notyf = new Notyf({
+  duration: 3000,
+  position: {
+    x: "left",
+    y: "top",
+  },
+});
 //---ajax add to cart---
 jQuery(document).ready(function($) {
   $('.addToCard').on('click', function(e){ 
@@ -37,42 +44,21 @@ jQuery(document).ready(function($) {
 
               $thisbutton[0].childNodes[1].classList.remove('hidden');
               $thisbutton[0].classList.remove('is-loading');
-              $thisbutton[0].style.width  = 'unset';
+              //$thisbutton[0].style.width  = 'unset';
               $thisbutton[0].style.height  = 'unset';
 
            
 
               if (response.error & response.product_url) {
                   window.location = response.product_url;
-                  Swal.fire({
-                    text: 'متاسفانه خطایی رخ داد',
-                    icon: 'error',
-                    showCancelButton: false,
-                    confirmButtonText: 'متوجه شدم',
-                  });
+                  notyf.error('متاسفانه مشکلی رخ داد مجددا بعدا تلاش کنید');
                   return;
               } else { 
                   $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
 
-                  Swal.fire({
-                    icon: "success",
-                    html: `
-                    .این دوره با موفقیت به سبد خرید شما اضافه شد
-                    `,
-                    showCloseButton: true,
-                    showCancelButton: true,
-                    focusConfirm: false,
-                    confirmButtonColor: "#fc427b",
-                    cancelButtonColor: "#2563eb",
-                    confirmButtonText: `
-                      <a href='/cart'>تکمیل خرید</a>
-                    `,
-                    confirmButtonAriaLabel: "Thumbs up, great!",
-                    cancelButtonText: `
-                     متوجه شدم
-                    `,
-                    cancelButtonAriaLabel: "Thumbs down"
-                  });
+                  notyf.success('این دوره با موفقیت به سبد خرید اضافه شد');
+
+ 
               } 
           }, 
       }); 
@@ -95,16 +81,44 @@ for (i = 0; i < coll.length; i++) {
     } 
   });
 }
-//------ more -------
-let btnMore = document.querySelector('.btn-more');
-let moreContent = document.querySelector('.more-content');
-let gradient = document.querySelector('.gradientMore');
-btnMore.addEventListener('click' , ()=>{
-  //moreContent.classList.remove('max-h-[200px]');
-  moreContent.style.maxHeight = moreContent.scrollHeight + "px";
-  gradient.classList.add('hidden');
-  btnMore.classList.add('hidden');
+
+//------ read more/less for article content ------
+document.addEventListener('DOMContentLoaded', function() {
+  const contentWrapper = document.querySelector('.content-wrapper');
+  if (contentWrapper) {
+    const shortContent = contentWrapper.querySelector('.short-content');
+    const fullContent = contentWrapper.querySelector('.full-content');
+    
+    if (shortContent && fullContent) {
+      const shortBtn = shortContent.querySelector('.btn-read-more');
+      const fullBtn = fullContent.querySelector('.btn-read-more');
+      
+      // Toggle function
+      function toggleContent(e) {
+        e.preventDefault();
+        
+        if (shortContent.style.display === 'none' || shortContent.style.display === '') {
+          // Currently showing full content, switch to short
+          shortContent.style.display = 'inline';
+          fullContent.style.display = 'none';
+        } else {
+          // Currently showing short content, switch to full
+          shortContent.style.display = 'none';
+          fullContent.style.display = 'inline';
+        }
+      }
+      
+      // Add click handlers
+      if (shortBtn) {
+        shortBtn.addEventListener('click', toggleContent);
+      }
+      if (fullBtn) {
+        fullBtn.addEventListener('click', toggleContent);
+      }
+    }
+  }
 });
+
 //------ episodes -------
 let videoEpisode = document.querySelector('.video-episode'); // المان <video>
 let btnEpisodes = document.querySelectorAll(".btn-episodes"); // انتخاب دکمه‌ها
@@ -112,6 +126,9 @@ let loadingIndicator = document.querySelector('.loading-indicator'); // انتخ
 
 for (let i = 0; i < btnEpisodes.length; i++) {
   btnEpisodes[i].addEventListener("click", function(event) {
+
+    videoEpisode.parentElement.classList.remove('hidden');
+
     let videoUrl = this.getAttribute('data-video'); // گرفتن لینک ویدیو
 
 
@@ -144,30 +161,51 @@ for (let i = 0; i < btnEpisodes.length; i++) {
 }
 
 
-let btnLicCopy = document.querySelector('#lic-copy')
-if(btnLicCopy){
-  btnLicCopy.addEventListener('click' , async function(e){
-    try {
-      let lic = e.target.getAttribute('data-lic');
-      await navigator.clipboard.writeText(lic);
-      Swal.fire({
-        text: 'لایسنس کپی شد' ,
-        icon: 'success',
-        heightAuto: false,
-        showConfirmButton: false,
-        timer: 3000,
-        position: "center",
+// ---- itroducing video ------
+const videoContainer = document.querySelector('.video-container');
+const videoIntroduce = document.querySelector('.video-introduce');
+let btnShowVideo = document.querySelectorAll('.btn-show-video');
+let loadingIndicatorIntroduce = document.querySelector('.loading-indicator-introduce'); 
+
+
+for (let i = 0; i < btnShowVideo.length; i++) {
+
+  btnShowVideo[i].addEventListener("click", function(event) {
+    document.body.style.overflow = 'hidden';
+    let videoUrl = this.getAttribute('data-video'); 
+
+    if (videoIntroduce) {
+
+      videoContainer.classList.remove('hidden');
+
+      // نمایش لودینگ
+      loadingIndicatorIntroduce.style.display = 'block';
+
+      // تغییر لینک ویدیو
+      videoIntroduce.setAttribute('src', videoUrl);
+
+      // پخش ویدیو زمانی که آماده شد
+      videoIntroduce.addEventListener('canplay', function() {
+        loadingIndicatorIntroduce.style.display = 'none'; 
+        videoIntroduce.play(); // پخش ویدیو
       });
-    } catch (err) {
-      Swal.fire({
-        text: 'متاسفانه کپی نشد',
-        icon: 'error',
-        heightAuto: false,
-        showConfirmButton: false,
-        timer: 3000,
-        position: "center",
+
+      // اگر ویدیو در حال بارگذاری باشد
+      videoIntroduce.addEventListener('waiting', function() {
+        loadingIndicatorIntroduce.style.display = 'block'; 
       });
     }
-  
-  })
+  });
 }
+
+
+videoIntroduce.addEventListener('click' , function(e){
+  e.stopPropagation();
+})
+
+videoContainer.addEventListener('click' , function(){
+  videoContainer.classList.add('hidden');
+  videoIntroduce.pause(); 
+  videoIntroduce.currentTime = 0; 
+  document.body.style.overflow = 'auto';
+})

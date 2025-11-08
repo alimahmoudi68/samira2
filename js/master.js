@@ -2,8 +2,8 @@ let screenWidt = window.innerWidth;
 window.addEventListener('resize' , ()=>{
   screenWidt =  window.innerWidth;
   if(screenWidt > 768){
-    let mstSidebarBg = document.querySelector(".mst-sidebar-bg");
-    mstSidebarBg.style.display = "none";
+    // let mstSidebarBg = document.querySelector(".mst-sidebar-bg");
+    // mstSidebarBg.style.display = "none";
   }
 });
 //-----------------------init loading -------------
@@ -98,38 +98,6 @@ function isClick (el , evt){
 }
 
 
-
-// ---------- map ---------
-const neshanMap = new nmp_mapboxgl.Map({
-  mapType: nmp_mapboxgl.Map.mapTypes.neshanVectorNight,
-  container: "map",
-  zoom: 13,
-  pitch: 0,
-  center: [loc.long , loc.lat],
-  minZoom: 2,
-  maxZoom: 21,
-  trackResize: true,
-  mapKey: "web.1b5c3fac78984a74a8c106db0265147e",
-  poi: false,
-  traffic: false,
-  mapTypeControllerOptions: {
-      show: false,
-      position: 'bottom-left'
-  }
-});
-
-// ساخت یک Popup با متن دلخواه
-var popup = new nmp_mapboxgl.Popup({ offset: [0, -40] , closeButton: false}) // حذف دکمه بستن }) // تنظیم فاصله برای ظاهر بهتر
-.setHTML(`<span style='color:black'>${loc.title}</span>`);
-
-// اضافه کردن Popup به مارکر
-var marker = new nmp_mapboxgl.Marker({ color: "purple" })
-    .setLngLat([loc.long , loc.lat])
-    .setPopup(popup) // اتصال Popup به مارکر
-    .addTo(neshanMap);
-
-// نمایش Popup به صورت پیش‌فرض (اختیاری)
-popup.addTo(neshanMap);
 
 // --------- WordPress 3-Level Mega Menu Functionality ---------
 document.addEventListener('DOMContentLoaded', function() {

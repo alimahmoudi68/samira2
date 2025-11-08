@@ -24,10 +24,10 @@ $faqs = array(
  
 );
 ?>
-<div class='flex items-start'>
+<div class='flex flex-wrap items-start gap-y-6'>
     <div class='w-full md:w-[50%] flex flex-col'>
-        <span class="text-xl md:text-3xl font-bold">سوالات پر تکرار</span>
-        <span class="">
+        <span class="text-xl md:text-3xl font-bold mb-3">سوالات پر تکرار</span>
+        <span class="text-justify">
         به پرتکرار‌ترین سوالاتی که کاربران لیمو‌هاست داشته‌اند پاسخ داده‌ایم؛ شاید پاسخ شما هم در این میان باشد.
         </span>
     </div>
@@ -38,7 +38,7 @@ $faqs = array(
             foreach($faqs as $faq) {
                 
         ?>
-        <div class='w-full bg-white-100 rounded-md p-3'>
+        <div class='w-full bg-white-100 border border-gray-200 rounded-md p-3'>
             <div
                 class='btn-collapse w-full text-base group font-semibold flex flex-wrap justify-between items-center text-gray-600 hover:cursor-pointer'>
                 <div class='w-full flex justify-between items-center'>
@@ -59,7 +59,7 @@ $faqs = array(
                 </div>
             </div>
             <div class='answer-container w-full transition-all duration-200 rounded-md max-h-0 overflow-hidden'>
-                <div class='mt-3 mr-14 p-3 rounded-md'>
+                <div class='mt-3 p-3 rounded-md'>
                     <span
                         class='text-sm sm:text-base font-normal text-text-primary-100'><?php echo $faq->a; ?></span>
                 </div>

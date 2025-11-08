@@ -20,7 +20,7 @@ global $my_opt;
 </head>
 <body dir="rtl" class='h-screen font-modam bg-white-100 flex flex-col ss02 ss03'>
 
-    <div class="preloader fixed w-screen h-screen bg-dark-30  backdrop-blur-lg flex items-center justify-center z-100">
+    <div class="preloader fixed w-screen h-screen bg-dark-30 backdrop-blur-lg flex items-center justify-center z-100">
         <div class="w-[100px] h-[100px] flex items-center justify-center relative rounded-full">
             <span class="w-full h-full absolute inline-block rounded-[50%] border-t-2 shadow-loading animate-loading"></span>
             <span class="w-full h-full absolute inline-block rounded-[50%] shadow-loadingBg bg-linear-to-r from-primary-100 to-[##191a1a]"></span>
@@ -42,7 +42,7 @@ global $my_opt;
         </div>
     </div>
 
-    <header class='header header-top w-full transition-all duration-300 z-2000 fixed top-[24px]'>
+    <header class='hidden header header-top w-full transition-all duration-300 z-2000 md:block md:fixed top-[24px]'>
         <div class='container mx-auto border border-gray-200 flex justify-between px-2 py-3 md:py-5 backdrop-blur-lg rounded-lg relative'>
             <div class='flex justify-between items-center'>
                 <a href='<?php  echo home_url() ?>' class='items-center ml-5 flex'>

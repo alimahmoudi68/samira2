@@ -59,9 +59,9 @@ let sliderPortfolio = new Swiper ('.slider-portfolio', {
   },
 
 });
-
 const portfolioDetailContainer = document.querySelector('.portfolio-detail-container');
 const portfolioDetailVideoContainer = document.querySelector('.portfolio-detail-video-container');
+const portfolioDetailImgContainer = document.querySelector('.portfolio-detail-img-container');
 const portfolioDetailVideo = document.querySelector('.portfolio-detail-video');
 let btnShowPortfolioDetail = document.querySelectorAll('.btn-show-portfolio-detail');
 let loadingPortfolioDetail = document.querySelector('.loading-portfolio-detail'); // انتخاب المان لودینگ
@@ -72,17 +72,18 @@ for (let i = 0; i < btnShowPortfolioDetail.length; i++) {
   btnShowPortfolioDetail[i].addEventListener("click", function(event) {
     let videoUrl = this.getAttribute('data-video'); // گرفتن لینک ویدیو
     let imgUrl = this.getAttribute('data-img');  // گرفتن لینک تصویر
+    document.body.style.overflow = 'hidden';
 
     if (portfolioDetailContainer) {
 
       // نمایش جزئیات پورتفولیو
       portfolioDetailContainer.classList.remove('hidden');
 
-      if (false) {
+      if (videoUrl) {
         portfolioDetailVideoContainer.style.display = 'block';
 
         // نمایش ویدیو و پنهان کردن تصویر
-        document.querySelector('.portfolio-detail-container img').style.display = 'none'; // مخفی کردن عکس
+        portfolioDetailImgContainer.style.display = 'none'; // مخفی کردن عکس
 
         // نمایش لودینگ
         loadingPortfolioDetail.style.display = 'block';
@@ -103,7 +104,7 @@ for (let i = 0; i < btnShowPortfolioDetail.length; i++) {
       } else {
         // نمایش تصویر و پنهان کردن ویدیو
         document.querySelector('.portfolio-detail-container img').setAttribute('src', imgUrl);
-        document.querySelector('.portfolio-detail-container img').style.display = 'block'; // نمایش تصویر
+        portfolioDetailImgContainer.style.display = 'block'; // نمایش تصویر
         portfolioDetailVideoContainer.style.display = 'none'; // مخفی کردن ویدیو
         loadingPortfolioDetail.style.display = 'none';
       }
@@ -119,7 +120,21 @@ portfolioDetailContainer.addEventListener('click', function() {
   portfolioDetailContainer.classList.add('hidden');
   portfolioDetailVideo.pause(); // متوقف کردن پخش ویدیو
   portfolioDetailVideo.currentTime = 0; // برگرداندن ویدیو به ابتدا (اختیاری)
+  document.body.style.overflow = 'auto';
 });
+
+// Close button functionality
+const closeButton = document.querySelector('.portfolio-detail-container svg');
+if (closeButton) {
+  closeButton.addEventListener('click', function(e) {
+    e.stopPropagation(); // جلوگیری از اجرای event container
+    portfolioDetailContainer.classList.add('hidden');
+    portfolioDetailVideo.pause();
+    portfolioDetailVideo.currentTime = 0;
+  });
+  document.body.style.overflow = 'auto';
+}
+
 
 
 // ------- swiper index products --------------

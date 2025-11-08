@@ -23,26 +23,8 @@
                 <?php the_post_thumbnail('post'); ?>
             </a>
         </div>
-        <!-- <div class='w-full h-[230px]'>
-        </div> -->
         <div class='flex flex-col w-full mt-2 p-3'>
-            <div class='flex items-center text-sm font-semibold text-primary-100'>
-                <svg class='w-2 h-2 fill-primary-100 ml-1' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="50" />
-                </svg>
-                <span>
-                    <?php 
-                        $status =  get_post_meta( get_the_ID() , 'product_status' , true);
-                        if($status == 'soon'){
-                            echo 'به زودی'; 
-                        }else if($status == 'continue'){
-                            echo 'در حال برگزاری'; 
-                        }else if($status == 'finish'){
-                            echo 'تکمیل ضبط'; 
-                        }
-                    ?>
-                </span>
-            </div>
+
             <div
                 class='w-full h-[50px] flex items-start flex-grow text-[1.2rem] font-semibold text-text-primary-100'>
                 <a href="<?php the_permalink() ?>">

@@ -1,8 +1,5 @@
-<div class='w-full xl:h-[calc(100vh-85px)] flex flex-wrap gap-x-[40px] justify-center items-center md:justify-between relative mb-[64px] md:mb-0'>
-    <div class='w-full flex justify-center md:w-[calc(40%-20px)]'>
-        <img src='<?php echo get_template_directory_uri(); ?>/images/top-banner.png' class='w-full border-2 border-border-100 rounded-md h-auto px-5'/>
-    </div>
-    <div class='flex flex-col items-center md:w-[calc(60%-20px)] px-5'>
+<div class='w-full h-[calc(100vh-80px)] flex flex-wrap gap-x-[40px] justify-center items-center md:justify-between relative mb-[64px] md:mb-0'>
+    <div class='flex flex-col items-center md:w-[calc(60%-20px)] px-5 order-2 md:order-1'>
         <span class='text-3xl md:text-[2.5rem] xl:text-[4rem] leading-10 font-black text-center mt-12 mb-[25px] md:mb-[50px] md:text-right text-text-primary-100'>   
             <?php echo get_bloginfo('name'); ?>
         </span>
@@ -27,6 +24,9 @@
                 فعالیت، بزرگ‌ترین افتخار ماست
             </span>
         </div>
+    </div>
+    <div class='w-full flex justify-center md:w-[calc(40%-20px)] order-1 md:order-2'>
+        <img src='<?php echo get_template_directory_uri(); ?>/images/top-banner.png' class='w-full h-auto px-5'/>
     </div>
 </div> 
 
