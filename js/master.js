@@ -214,4 +214,76 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
+
+
+
+  // ------------------------- Footer Accordion -----------
+  const accordionItems = document.querySelectorAll('.footer-accordion-item');
+  
+  if (accordionItems.length > 0) {
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.footer-accordion-header');
+      const icon = item.querySelector('.accordion-icon');
+      
+      // Add click listener
+      header.addEventListener('click', function(e) {
+        // Only toggle on mobile
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          
+          const isOpen = item.classList.contains('footer-accordion-open');
+          
+          // Close all other items
+          accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              const otherIcon = otherItem.querySelector('.accordion-icon');
+              otherItem.classList.remove('footer-accordion-open');
+              if (otherIcon) {
+                otherIcon.style.transform = 'rotate(0deg)';
+              }
+            }
+          });
+          
+          // Toggle current item
+          if (isOpen) {
+            item.classList.remove('footer-accordion-open');
+            if (icon) {
+              icon.style.transform = 'rotate(0deg)';
+            }
+          } else {
+            item.classList.add('footer-accordion-open');
+            if (icon) {
+              icon.style.transform = 'rotate(180deg)';
+            }
+          }
+        }
+      });
+    });
+    
+    // Close all on window resize when switching to desktop
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        const isMobile = window.innerWidth < 768;
+        accordionItems.forEach(item => {
+          const icon = item.querySelector('.accordion-icon');
+          
+          if (isMobile) {
+            // Mobile: keep state
+            if (!item.classList.contains('footer-accordion-open') && icon) {
+              icon.style.transform = 'rotate(0deg)';
+            }
+          } else {
+            // Desktop: close all
+            item.classList.remove('footer-accordion-open');
+            if (icon) {
+              icon.style.transform = 'rotate(0deg)';
+            }
+          }
+        });
+      }, 100);
+    });
+  }
+  // ------------------------- /Footer Accordion -----------
 });

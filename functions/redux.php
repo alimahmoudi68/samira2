@@ -77,6 +77,12 @@ Redux::setSection( $opt_name, array(
     'icon'             => 'el el-map-marker' ,
     'fields'           => array(
         array(
+            'id'       => 'opt-about',
+            'type'     => 'textarea',
+            'title'    => 'درباره سالن',
+            'default'  => '',
+        ),
+        array(
             'title'    => 'شماره ثابت',
             'id' => 'opt-office-phone',
             'type' => 'text',
