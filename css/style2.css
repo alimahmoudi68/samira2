@@ -651,10 +651,6 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
-  .size-6 {
-    width: calc(var(--spacing) * 6);
-    height: calc(var(--spacing) * 6);
-  }
   .parallax {
     background: url(../images/cover.png);
     height: 150px;
@@ -686,9 +682,6 @@
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
-  }
-  .h-\[1px\] {
-    height: 1px;
   }
   .h-\[3px\] {
     height: 3px;
@@ -1447,9 +1440,6 @@
   .pt-\[100px\] {
     padding-top: 100px;
   }
-  .pr-2 {
-    padding-right: calc(var(--spacing) * 2);
-  }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -2091,9 +2081,9 @@
       height: 20px;
     }
   }
-  .md\:h-\[40px\] {
+  .md\:h-\[64px\] {
     @media (width >= 768px) {
-      height: 40px;
+      height: 64px;
     }
   }
   .md\:h-\[300px\] {
@@ -2131,29 +2121,9 @@
       width: calc(9/12 * 100%);
     }
   }
-  .md\:w-\[4\%\] {
-    @media (width >= 768px) {
-      width: 4%;
-    }
-  }
   .md\:w-\[20px\] {
     @media (width >= 768px) {
       width: 20px;
-    }
-  }
-  .md\:w-\[25\%\] {
-    @media (width >= 768px) {
-      width: 25%;
-    }
-  }
-  .md\:w-\[40\%\] {
-    @media (width >= 768px) {
-      width: 40%;
-    }
-  }
-  .md\:w-\[40px\] {
-    @media (width >= 768px) {
-      width: 40px;
     }
   }
   .md\:w-\[45\%\] {
@@ -2171,6 +2141,11 @@
       width: 50%;
     }
   }
+  .md\:w-\[64px\] {
+    @media (width >= 768px) {
+      width: 64px;
+    }
+  }
   .md\:w-\[calc\(33\%-20px\)\] {
     @media (width >= 768px) {
       width: calc(33% - 20px);
@@ -2184,11 +2159,6 @@
   .md\:w-\[calc\(60\%-20px\)\] {
     @media (width >= 768px) {
       width: calc(60% - 20px);
-    }
-  }
-  .md\:w-\[۴۰\%\] {
-    @media (width >= 768px) {
-      width: ۴۰%;
     }
   }
   .md\:w-fit {

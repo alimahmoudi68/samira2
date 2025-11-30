@@ -10,10 +10,10 @@
         </span> -->
         <div class='flex flex-wrap justify-center items-center gap-x-4'>
             <div class='w-full md:w-fit flex gap-x-2 flex justify-center'>
-                <img src='<?php echo get_template_directory_uri(); ?>/images/s1.jpg' class='w-[32px] h-[32px] md:w-[40px] md:h-[40px] border-2 border-border-100 rounded-full'/>
-                <img src='<?php echo get_template_directory_uri(); ?>/images/s2.jpg' class='w-[32px] h-[32px] md:w-[40px] md:h-[40px] border-2 border-border-100 rounded-full mr-[-24px]'/>
-                <img src='<?php echo get_template_directory_uri(); ?>/images/s3.jpg' class='w-[32px] h-[32px] md:w-[40px] md:h-[40px] border-2 border-border-100 rounded-full mr-[-24px]'/>
-                <img src='<?php echo get_template_directory_uri(); ?>/images/s4.jpg' class='w-[32px] h-[32px] md:w-[40px] md:h-[40px] border-2 border-border-100 rounded-full mr-[-24px]'/>
+                <img src='<?php echo get_template_directory_uri(); ?>/images/s1.jpg' class='w-[32px] h-[32px] md:w-[64px] md:h-[64px] border-2 border-border-100 rounded-full'/>
+                <img src='<?php echo get_template_directory_uri(); ?>/images/s2.jpg' class='w-[32px] h-[32px] md:w-[64px] md:h-[64px] border-2 border-border-100 rounded-full mr-[-24px]'/>
+                <img src='<?php echo get_template_directory_uri(); ?>/images/s3.jpg' class='w-[32px] h-[32px] md:w-[64px] md:h-[64px] border-2 border-border-100 rounded-full mr-[-24px]'/>
+                <img src='<?php echo get_template_directory_uri(); ?>/images/s4.jpg' class='w-[32px] h-[32px] md:w-[64px] md:h-[64px] border-2 border-border-100 rounded-full mr-[-24px]'/>
             </div>
             <span
                 class='text-center block text-text-primary-100'>
